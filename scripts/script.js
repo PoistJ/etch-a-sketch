@@ -14,9 +14,18 @@ function hover () {
     const gridSquare = document.querySelectorAll(".square");
     gridSquare.forEach(gridSquare => {
         gridSquare.addEventListener ("mouseenter", () => {
-            gridSquare.style.backgroundColor = "teal";
+            gridSquare.style.backgroundColor = getRandomColor();
         });
     });
+}
+
+function getRandomColor() {
+    var letters = '0123456789ABCDEF';
+    var color = '#';
+    for (i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16)]
+    }
+    return color;
 }
 
 let defaultSquares = 16;
